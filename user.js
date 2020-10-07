@@ -7,7 +7,7 @@ async function getData(url) {
         const response = await axios.get(url);
         const data = await response.data;
         const newData = await JSON.stringify(data);
-        fs.writeFileSync('addressList.json', newData, (err) => {
+        fs.writeFile('addressList.json', newData, (err) => {
             if(err) throw(err);
             console.log('addressList.json created successfully');
         })
